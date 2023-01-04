@@ -1,4 +1,4 @@
-Keep the pickle files in the same direcotry as the python file.
+Keep the pickle files in the same directory as the python file.
 
 # assuming python is intalled...
 
