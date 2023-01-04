@@ -37,10 +37,10 @@ def simil_test_input(model, input_text):
     simil_result = [(simil[0].replace('TARGET_', ''), round(simil[1], 4)) for simil in similarities]
     return simil_result
 
-input_text = input("DESC input:")
-result = simil_test_input(model, input_text)
+for i in range(1,1000):
+    input_text = input("DESC input:")
+    result = simil_test_input(model, input_text)
 
-for idx, data in enumerate(result):
-    this_name_df = hs_info_df[hs_info_df['HSCODE'] == data[0]]
-    print("\n{}rank :\n\tHSCODE : {}\n\tinformation : {}\n\tSCORE : {}".format(idx + 1, data[0], this_name_df['information'].values[0], data[1]))
-
+    for idx, data in enumerate(result):
+        this_name_df = hs_info_df[hs_info_df['HSCODE'] == data[0]]
+        print("\n{}rank :\n\tHSCODE : {}\n\tinformation : {}\n\tSCORE : {}".format(idx + 1, data[0], this_name_df['information'].values[0], data[1]))
